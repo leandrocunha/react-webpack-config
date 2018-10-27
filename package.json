@@ -1,0 +1,26 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "create boilerplat with react, webpack and babel 7",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Maycon Alves <mayconmustaine@hotmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mayconbalves/react-webpack-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mayconbalves/react-webpack-config/issues"
+  },
+  "homepage": "https://github.com/mayconbalves/react-webpack-config#readme",
+  "devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "4.23.1",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.10"
+  }
+}
