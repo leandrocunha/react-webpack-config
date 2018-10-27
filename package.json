@@ -4,9 +4,9 @@
   "description": "create boilerplat with react, webpack and babel 7",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack"
+    "webpack": "babel-node ./node_modules/webpack/bin/webpack",
+    "start": "babel-node ./node_modules/webpack-dev-server/bin/webpack-dev-server --open"
   },
   "keywords": [],
   "author": "Maycon Alves <mayconmustaine@hotmail.com>",

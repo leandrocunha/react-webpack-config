@@ -1,5 +1,5 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+import path from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 module.exports = {
 	// these are used to tell our server what has to be compiled and from where
@@ -25,6 +25,30 @@ module.exports = {
 	// Everything from our src folder needs to be served (outputted) in the browser
 	devServer: {
 		contentBase: path.join(__dirname, 'src')
+	},
+	module: {
+	  rules: [
+	    {
+	      // this is so that we can compile any React,
+	      // ES6 and above into normal ES5 syntax
+	      test: /\.(js|jsx)$/,
+	      // we do not want anything from node_modules to be compiled
+	      exclude: /node_modules/,
+	      use: ['babel-loader']
+	    },
+	    {
+	      test: /\.(css|scss)$/,
+	      use: [
+		"style-loader", // creates style nodes from JS strings
+		"css-loader", // translates CSS into CommonJS
+		"sass-loader" // compiles Sass to CSS, using Node Sass by default
+	      ]
+	    },
+	    {
+	      test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
+	      loaders: ['file-loader']
+	    }
+	  ]
 	},
 	// here we set what plugins we need in our app. As of this moment we only need
 	// the html-webpack-plugin which tells the server that the index.bundle.js
